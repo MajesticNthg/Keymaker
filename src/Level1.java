@@ -11,8 +11,8 @@ public class Level1 {
         for (int i = 0; i < k; i++) {
             if (i == 0) stepOne(doors);
             else if (i == 1) stepTwo(doors);
-            else if (i >= 2) stepThree(doors);
-            // else moreThanThree(doors, i);
+            else if (i == 2) stepThree(doors);
+            else moreThanThree(doors, i);
         }
 
         StringBuilder openCloseDoor = new StringBuilder();
