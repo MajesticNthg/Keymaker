@@ -11,8 +11,7 @@ public class Level1 {
         for (int i = 0; i < k; i++) {
             if (i == 0) stepOne(doors);
             else if (i == 1) stepTwo(doors);
-            else if (i == 2) stepThree(doors);
-            else moreThanThree(doors, i);
+            else if (i >= 2) stepThree(doors, i);
         }
 
         StringBuilder openCloseDoor = new StringBuilder();
@@ -34,21 +33,13 @@ public class Level1 {
         }
         return doors;
     }
-    public static int[] stepThree (int[] doors) {
-        for (int x = 2; x < doors.length; x += 3) {
+    public static int[] stepThree (int[] doors, int i) {
+        for (int x = i; x < doors.length; x += i + 1) {
             if (doors[x] == 1) {
                 doors[x] = 0;
             }
             else doors[x] = 1;
         }
-        return doors;
-    }
-    public static int[] moreThanThree (int[] doors, int i) {
-        if (doors[i] == 1) {
-            doors[i] = 0;
-        }
-        else doors[i] = 1;
-
         return doors;
     }
 }
